@@ -4,8 +4,8 @@ import { MindARThree } from "mindar-image-three";
 const baseUrl = "https://pub-dd4446412aff4b8ca42353ad71f1cf3c.r2.dev";
 
 const targets = [
-  //{ index: 0, videoSrc: `${baseUrl}/demo-video.mp4` }
-  { index: 0, videoSrc: "./videos/demo-video.mp4" }
+  { index: 0, videoSrc: `${baseUrl}/demo-video.mp4` }
+  //{ index: 0, videoSrc: "./videos/demo-video.mp4" }
 ];
 
 const loadingEl = document.createElement("div");
@@ -79,7 +79,7 @@ const start = async () => {
     videoTexture.colorSpace = THREE.SRGBColorSpace;
     videoTextures.push(videoTexture);
 
-    const geometry = new THREE.PlaneGeometry(1, 1 / imageAspectRatio);
+    const geometry = new THREE.PlaneGeometry(1, 480 / 672);
     const material = new THREE.MeshBasicMaterial({ map: videoTexture, transparent: true });
     const plane = new THREE.Mesh(geometry, material);
     anchor.group.add(plane);
